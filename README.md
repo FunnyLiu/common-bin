@@ -22,7 +22,23 @@
 
 Abstraction bin tool wrap [yargs](http://yargs.js.org/), to provide more convenient usage, support async / generator.
 
+# 源码分析
+
+## 文件结构
+
+``` bash
+├── index.js - 入口文件，直接暴露lib/command.js
+├── lib
+|  ├── command.js
+|  └── helper.js
+```
+
 ---
+
+## 外部模块依赖
+
+![img](./graphviz/module.svg)
+
 
 ## Install
 
