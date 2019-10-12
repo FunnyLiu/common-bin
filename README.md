@@ -24,6 +24,8 @@ Abstraction bin tool wrap [yargs](http://yargs.js.org/), to provide more conveni
 
 # 源码分析
 
+通过规约拿到指定文件夹下命令对应解析
+
 ## 文件结构
 
 ``` bash
