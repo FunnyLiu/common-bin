@@ -57,6 +57,14 @@ Abstraction bin tool wrap [yargs](http://yargs.js.org/), to provide more conveni
 
 提供load()方法，根据指定路由去require其内容加到命令列表this[COMMANDS]上。
 
+### lib/helper.js
+
+提供一系列有用的util。比如forkNode。
+
+提供forkNode()方法，基于原生child_process模块，fork子进程，优雅退出调用gracefull()方法。
+
+
+
 ## Install
 
 ```bash
