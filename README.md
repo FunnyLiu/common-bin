@@ -29,8 +29,8 @@ Abstraction bin tool wrap [yargs](http://yargs.js.org/), to provide more conveni
 ``` bash
 ├── index.js - 入口文件，直接暴露lib/command.js
 ├── lib
-|  ├── command.js
-|  └── helper.js
+|  ├── command.js - 基于yargs模块解析参数，提供一系列api，根据文件路径load命令函数到命令列表。
+|  └── helper.js - 提供一些基本util
 ```
 
 ---
@@ -39,6 +39,21 @@ Abstraction bin tool wrap [yargs](http://yargs.js.org/), to provide more conveni
 
 ![img](./graphviz/module.svg)
 
+## 逐个文件分析
+
+### index.js
+
+直接暴露lib/command.js
+
+### lib/command.js
+
+基于yargs模块解析参数，提供一系列api。
+
+提供start()方法，用于第一次启动程序，基于co模块异步调用[DISPATCH]方法。
+
+[DISPATCH]方法，基于yargs模块初始化。在this[COMMANDS]上拿命令，如果命令存在，则取出命令并执行；如果不存在则基于yargs注册命令。
+
+提供load()方法，根据指定路由去require其内容加到命令列表this[COMMANDS]上。
 
 ## Install
 
